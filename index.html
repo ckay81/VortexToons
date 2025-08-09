@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>vortextoons</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="VortexToons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="icon" type="image/png" href="Digital Animation Brand Logo featuring 'vortextoons'.png" />
+
+</head>
+<body>
+   
+<div class="container" onclick="toggleMenu(this)">
+  <div class="bar1"></div>
+  <div class="bar2"></div>
+  <div class="bar3"></div>
+</div>
+
+</div>
+  <div id="mySidebar" class="sidebar">
+  <a href="home.html">Home</a>
+  <a href="anime list.html">Anime List</a>
+  <a href="genres.html">Genres</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<div id="namin">
+    <header>   
+  <!-- Branding -->
+  <div class="brand">VortexToons <i class="fas fa-video"></i></div>
+      <h1>VortexToons </h1>
+    <div id="navMenu" class="menu">
+  </header>
+
+     
+    </div>
+  <section class="banner">
+  <div class="tagline-container">
+    <p id="tagline">🎌 Welcome to the World of Anime Magic!<br>Unleash Stories. Live the Action.</p>
+  </div>
+  </section>
+
+  <main class="anime-grid">
+    <div class="anime-card">
+      <img src="dewmon slayer/digital-deluxe.jpg" alt="Demon Slayer">
+      <h3>Demon Slayer</h3>
+    </div>
+    <div class="anime-card">
+      <img src="one piece/download (1).jpg" alt="One Piece">
+      <h3>One Piece</h3>
+    </div>
+    <div class="anime-card">
+      <img src="jujutsu/download (2).jpg" alt="Jujutsu Kaisen">
+      <h3>Jujutsu Kaisen</h3>
+    </div>
+     <div class="anime-card">
+      <img src="Gachiakuta/acad8581f1a2eafa8c9d68b899bb1b21.jpg" alt="Gachiakuta">
+      <h3>Gachiakuta</h3>
+    </div>
+     <div class="anime-card">
+      <img src="ord of Mysteries/38c5a71674d8fc4af6ee57ffeb7b2617.jpg" alt="ord of Mysteries">
+      <h3>ord of Mysteries</h3>
+    </div>
+     <div class="anime-card">
+      <img src="Dan Da Dan Season 2/4303d95c719242ab6e459d477b0a8c08.jpg" alt="ord of Mysteries">
+      <h3>Dan Da Dan Season 2</h3>
+    </div>
+    <!-- Add more anime here -->
+  </main>
+</div>
+<script>
+const taglines = [
+  "🎌 Welcome to the World of Anime Magic!<br>Unleash Stories. Live the Action.",
+  "🌟 Your Ultimate Anime Universe Starts Here!<br>Stream. Discover. Enjoy.",
+  "🎥 Enter the Realm of Endless Animation!<br>Where Every Frame Tells a Story.",
+  "✨ Welcome to AniVerse!<br>Your Portal to Epic Anime Adventures.",
+  "💫 Dive into a World Beyond Imagination!<br>Anime Like Never Before.",
+  "🔥 Hello, Fellow Otaku!<br>Get Ready to Binge, Laugh, and Cry."
+];
+
+let current = 0;
+setInterval(() => {
+  current = (current + 1) % taglines.length;
+  document.getElementById("tagline").innerHTML = taglines[current];
+}, 5000);
+
+function toggleMenu(icon) {
+  // Animate bars
+  icon.classList.toggle("change");
+  
+
+  // Push sidebar
+  let sidebar = document.getElementById("mySidebar");
+  let main = document.getElementById("main");
+
+  if (sidebar.style.width === "250px") {
+    sidebar.style.width = "0";
+    if (main) main.style.marginLeft = "0";
+  } else {
+    sidebar.style.width = "250px";
+    if (main) main.style.marginLeft = "250px";
+  }
+}
+</script>
+
+
+  <footer>
+    <p>&copy; 2025 VortexToons. All rights reserved.</p>
+  </footer>
+</body>
+</html>

@@ -34,6 +34,7 @@ header {
 
 .brand i {
   font-size: 1.3rem;
+  align-items: center;
 }
 
 /* Add a black background color to the top navigation */
@@ -210,46 +211,105 @@ footer {
 .change .bar3 {
   transform: translate(0, -11px) rotate(45deg);
 }
-
+/* Sidebar Enhancements */
 .sidebar {
   height: 100%;
-  width: 1px; /* start closed */
+  width: 0; /* hidden by default */
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #080808;
-
+  background: linear-gradient(180deg, #111, #1f1f1f);
+  box-shadow: 2px 0 10px rgba(0,0,0,0.6);
   overflow-x: hidden;
-  transition: 0.3s;
+  transition: width 0.3s ease;
   padding-top: 60px;
   z-index: 1000;
 }
-.main-content {
-  transition: margin-left 0.4s;
-  padding: 20px;
-}
+
 .sidebar a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
+  padding: 14px 24px;
   font-size: 18px;
-  color: #0c0b0b;
-  background-color: red;
+  text-decoration: none;
+  color: #f0f0f0;
   display: block;
-  transition: 0.2s;
+  transition: background 0.3s, color 0.3s, transform 0.2s;
+  border-radius: 4px;
+  margin: 4px 12px;
 }
 
 .sidebar a:hover {
-  color: #f30505;
-
+  background: #ffcc00;
+  color: #000;
+  transform: translateX(6px);
+}
+.sidebar h4 {
+  padding: 10px 20px;
+  margin: 10px 0;
+  color: #ffcc00;
+  border-bottom: 1px solid #444;
 }
 
 
-.sidebar .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
+/* Anime Card Hover Effects */
+.anime-card {
+  background-color: #2a2a2a;
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.anime-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  border-bottom: 2px solid #ffcc00;
+}
+
+.anime-card h3 {
+  padding: 12px;
+  color: #ffcc00;
+  font-size: 1.1rem;
+}
+
+.anime-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 6px 20px rgba(255, 204, 0, 0.3);
+}
+
+/* Banner Animation */
+.banner {
+  background: linear-gradient(270deg, #ff6600, #cc00ff, #00ccff);
+  background-size: 600% 600%;
+  animation: gradientShift 12s ease infinite;
+  text-align: center;
+  padding: 40px 15px;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.tagline-container p {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+  animation: fade 1s ease-in-out;
+}
+
+/* Footer Glow */
+footer {
+  background-color: #121212;
+  text-align: center;
+  padding: 20px;
+  color: #888;
+  border-top: 2px solid #ffcc00;
+  box-shadow: 0 -3px 12px rgba(255, 204, 0, 0.15);
 }
 
 .openbtn {
@@ -268,4 +328,29 @@ footer {
 #main {
   transition: margin-left .5s;
 padding: 16px;
+}
+/* Preloader */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000; /* background while loading */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+#preloader img {
+  width: 150px;  /* adjust size */
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+/* Logo animation */
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 1; }
 }

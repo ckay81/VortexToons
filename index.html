@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+  <!-- Preloader -->
+<div id="preloader">
+  <img src="vortextoons-logo.png.png" alt="vortextoons">
+</div>
+
 <head>
   <meta charset="UTF-8">
   <title>vortextoons</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="VortexToons.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <link rel="icon" type="image/png" href="Digital Animation Brand Logo featuring 'vortextoons'.png" />
-
+  <link rel="icon" type="image/png" href="vortextoons-logo.png.png">
 </head>
 <body>
 <div id="namin">
@@ -18,21 +22,50 @@
     <div id="navMenu" class="menu">
   </header>
    
-<div class="container" onclick="toggleMenu(this)">
+ <div class="container" onclick="toggleMenu(this)">
   <div class="bar1"></div>
   <div class="bar2"></div>
   <div class="bar3"></div>
+ </div>
+
+ <div id="mySidebar" class="sidebar">
+  <span class="closebtn" onclick="closeNav()">&times;</span>
+  
+  <!-- Main Navigation -->
+   <h4>main</h4>
+  <a href="home.html">🏠 Home</a>
+  <a href="anime-list.html">📖 Anime List</a>
+  <a href="genres.html">🎭 Genres</a>
+  <a href="new-releases.html">✨ New Releases</a>
+  <a href="popular.html">🔥 Popular</a>
+  <a href="movies.html">🎬 Movies</a>
+  <a href="series.html">📺 Series</a>
+  
+  <!-- Categories -->
+   <h4>Categories</h4>
+  <a href="action.html">⚔️ Action</a>
+  <a href="adventure.html">🌍 Adventure</a>
+  <a href="comedy.html">😂 Comedy</a>
+  <a href="drama.html">🎭 Drama</a>
+  <a href="romance.html">💖 Romance</a>
+  <a href="sci-fi.html">🚀 Sci-Fi</a>
+  <a href="fantasy.html">🧙 Fantasy</a>
+  <a href="horror.html">👻 Horror</a>
+  <a href="sports.html">🏀 Sports</a>
+  <a href="isekai.html">🌀 Isekai</a>
+  
+  <!-- User / Info -->
+   <h4> User </h4>
+  <a href="about.html">ℹ️ About</a>
+  <a href="contact.html">📩 Contact</a>
+  <a href="support.html">💬 Support</a>
+  <a href="faq.html">❓ FAQ</a>
+  <a href="profile.html">👤 Profile</a>
+  <a href="settings.html">⚙️ Settings</a>
 </div>
 
-</div>
-  <div id="mySidebar" class="sidebar">
-  <a href="home.html">Home</a>
-  <a href="anime list.html">Anime List</a>
-  <a href="genres.html">Genres</a>
-  <a href="contact.html">Contact</a>
-</div>
      
-    </div>
+  
   <section class="banner">
   <div class="tagline-container">
     <p id="tagline">🎌 Welcome to the World of Anime Magic!<br>Unleash Stories. Live the Action.</p>
@@ -67,28 +100,30 @@
     <!-- Add more anime here -->
   </main>
 </div>
-<script>
-const taglines = [
+ <script>
+window.addEventListener("load", function() {
+    const preloader = document.getElementById("preloader");
+    setTimeout(() => {
+        preloader.style.opacity = "0";
+        setTimeout(() => preloader.style.display = "none", 500); // fade out after 500ms
+    }, 10000); // 5 seconds delay
+});
+ const taglines = [
   "🎌 Welcome to the World of Anime Magic!<br>Unleash Stories. Live the Action.",
   "🌟 Your Ultimate Anime Universe Starts Here!<br>Stream. Discover. Enjoy.",
   "🎥 Enter the Realm of Endless Animation!<br>Where Every Frame Tells a Story.",
   "✨ Welcome to AniVerse!<br>Your Portal to Epic Anime Adventures.",
   "💫 Dive into a World Beyond Imagination!<br>Anime Like Never Before.",
   "🔥 Hello, Fellow Otaku!<br>Get Ready to Binge, Laugh, and Cry."
-];
+ ];
 
-let current = 0;
-setInterval(() => {
+ etInterval(() => {
   current = (current + 1) % taglines.length;
   document.getElementById("tagline").innerHTML = taglines[current];
-}, 5000);
+ }, 5000);
 
 function toggleMenu(icon) {
-  // Animate bars
   icon.classList.toggle("change");
-  
-
-  // Push sidebar
   let sidebar = document.getElementById("mySidebar");
   let main = document.getElementById("main");
 
@@ -100,7 +135,7 @@ function toggleMenu(icon) {
     if (main) main.style.marginLeft = "250px";
   }
 }
-</script>
+ </script>
 
 
   <footer>
